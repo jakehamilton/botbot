@@ -1,14 +1,17 @@
 FROM node
 
-ADD package.json /tmp/package.json
+USER root
+RUN mkdir -p /opt/app/dist
+
+RUN npm install -g nodemon
+
+COPY package.json /tmp/package.json
 RUN cd /tmp && npm install
 
-RUN mkdir /src && \
-    cp -a /tmp/node_modules/ /src/node_modules/ && \
-    cd /src
+RUN cp -a /tmp/node_modules/ /opt/app/node_modules/ && \
+    cd /opt/app
 
-ADD . /src
-
-WORKDIR /src
+ADD . /opt/app/
+WORKDIR /opt/app
 
 CMD ["npm", "run", "dev"]

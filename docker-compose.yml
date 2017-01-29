@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    image: willowsnow/botbot
+    image: willowsnow/botbot:dev
     volumes:
-      - /src/node_modules/
-      - .:/src/
+      - /opt/app/node_modules/
+      - .:/opt/app/

@@ -4,8 +4,8 @@
   "description": "A modular Discord bot written in Node.js",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "babel-watch --watch src --use-polling src/index.js",
-    "prestart": "babel-cli src --out-dir dist",
+    "dev": "nodemon --exec babel-node -L -w src src/index.js",
+    "prestart": "babel src --out-dir dist",
     "start": "node dist/index.js"
   },
   "repository": {
@@ -25,6 +25,6 @@
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
     "babel-polyfill": "^6.22.0",
-    "babel-watch": "^2.0.5"
+    "nodemon": "^1.11.0"
   }
 }
