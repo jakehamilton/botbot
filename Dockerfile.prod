@@ -1,0 +1,12 @@
+FROM node
+
+ADD package.json /tmp/package.json
+RUN cd /tmp && npm install
+
+RUN mkdir /src && \
+    cp -a /tmp/node_modules/ /src/node_modules/ && \
+    cd /src
+
+WORKDIR /src
+
+CMD ["npm", "run", "start"]

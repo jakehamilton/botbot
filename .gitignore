@@ -38,3 +38,6 @@ jspm_packages
 
 # Botbot config
 botbot.cfg
+
+# Dist folder
+dist
