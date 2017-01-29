@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: willowsnow/botbot
+    volumes:
+      - /src/node_modules/
+      - .:/src/
